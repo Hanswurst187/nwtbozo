@@ -12,14 +12,14 @@ const int sensor6Pin = 7;
 const int sensor7Pin = 8;
 const int sensor8Pin = 9;
 
-int sensor1Count = 0;
-int sensor2Count = 0;
-int sensor3Count = 0;
-int sensor4Count = 0;
-int sensor5Count = 0;
-int sensor6Count = 0;
-int sensor7Count = 0;
-int sensor8Count = 0;
+float sensor1Count = 0;
+float sensor2Count = 0;
+float sensor3Count = 0;
+float sensor4Count = 0;
+float sensor5Count = 0;
+float sensor6Count = 0;
+float sensor7Count = 0;
+float sensor8Count = 0;
 
 int sensor1State = LOW;
 int sensor2State = LOW;
@@ -54,7 +54,7 @@ void loop() {
     int sensor1Reading = digitalRead(sensor1Pin);
     if (sensor1Reading != sensor1State) {
       if (sensor1Reading == HIGH) {
-        sensor1Count++;
+        sensor1Count+=0.5;
       }
       sensor1State = sensor1Reading;
     }
