@@ -46,7 +46,7 @@ void setup() {
   lcd.backlight();
   lcd.clear();
   lcd.setCursor(0, 0);
-  lcd.print("Total Count: ");
+  lcd.print("Total: ");
 }
 
 void loop() {
