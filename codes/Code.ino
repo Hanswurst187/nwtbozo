@@ -34,14 +34,14 @@ unsigned long lastSampleTime = 0;
 const unsigned long sampleInterval = 10; // Abtastfrequenz in Millisekunden
 
 void setup() {
-  pinMode(sensor1Pin, INPUT);
-  pinMode(sensor2Pin, INPUT);
-  pinMode(sensor3Pin, INPUT);
-  pinMode(sensor4Pin, INPUT);
-  pinMode(sensor5Pin, INPUT);
-  pinMode(sensor6Pin, INPUT);
-  pinMode(sensor7Pin, INPUT);
-  pinMode(sensor8Pin, INPUT);
+  pinMode(sensor1Pin, INPUT_PULLUP);
+  pinMode(sensor2Pin, INPUT_PULLUP);
+  pinMode(sensor3Pin, INPUT_PULLUP);
+  pinMode(sensor4Pin, INPUT_PULLUP);
+  pinMode(sensor5Pin, INPUT_PULLUP);
+  pinMode(sensor6Pin, INPUT_PULLUP);
+  pinMode(sensor7Pin, INPUT_PULLUP);
+  pinMode(sensor8Pin, INPUT_PULLUP);
   lcd.init();
   lcd.backlight();
   lcd.clear();
@@ -54,7 +54,7 @@ void loop() {
     int sensor1Reading = digitalRead(sensor1Pin);
     if (sensor1Reading != sensor1State) {
       if (sensor1Reading == HIGH) {
-        sensor1Count+=0.5;
+        sensor1Count++;
       }
       sensor1State = sensor1Reading;
     }
